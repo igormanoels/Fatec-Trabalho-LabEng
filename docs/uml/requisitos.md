@@ -9,7 +9,7 @@
 | RF005 | F| Campos complementares | Os campos para cada perfil devem ser: Sobre, Experiência, Formação Acadêmica, Licenças e Certificados. | Alta |
 | RF006 | F | Notificações | Os usuários deveram ser notificados sobre quaisquer mudanças em seu perfil. | Média |
 | RF007 | F | Acesso Mobile  | O site deve garantir que os candidatos possam se inscrever e acompanhar seu progresso no processo seletivo utilizando seus dispositivos móveis, como smartphones e tablets. | Média |
-| | | | | |
+| RF008 | F | Busca de Usuários | Deverá haver um mecanismo de busca de outros usuários pelo identificador '@usuarioSobrenome' | Média |
 | | | | | |
 | | | | | |
 | | | | | |
@@ -24,4 +24,12 @@
 | RNF006 | NF | Tamanho de Texto | O sistema deve permitir que os usuários aumentem o tamanho do texto para melhorar a legibilidade, oferecendo opções para ajustar o tamanho da fonte de acordo com as preferências individuais dos usuários. | Baixa |
 | RNF007 | NF | Tradução para Outros Idiomas | O sistema deve ser capaz de oferecer suporte a múltiplos idiomas, permitindo que os usuários escolham entre diferentes opções de idioma para navegar e interagir com o sistema, facilitando a participação de candidatos de diversas origens linguísticas. | Baixa |
 | RNF008 | NF | Alto Contraste| O sistema deve fornecer uma opção de alto contraste para melhorar a visibilidade do texto e dos elementos visuais para usuários com deficiência visual. | Baixo |
+| RNF009 | NF | Contador de seguidores | Cada perfil contará com um contador de seguidores do perfil | Baixo |
+| RNF009 | NF | Contador de visualizações | Cada perfil contará com um contador de visualizações do perfil | Baixo |
+| | | | | |
+| | | | | |
+| | | | | |
+| | | | | |
+| | | | | |
+
 
