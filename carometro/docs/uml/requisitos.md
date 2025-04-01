@@ -11,8 +11,9 @@
 | RF007 | F | Acesso Mobile  | O site deve garantir que os candidatos possam se inscrever e acompanhar seu progresso no processo seletivo utilizando seus dispositivos móveis, como smartphones e tablets. | Média |
 | RF008 | F | Busca de Usuário | Deverá haver um mecanismo de busca de outros usuários pelo identificador '@usuarioSobrenome' ou pelo email '@fatec.sp.gov.br'. | Média |
 | RF009 | F | Padrão da senha | As senhas devem manter um padrão, contendo números, caracteres, simbolos e com no mínimo 8 dígitos. | Média |
-| RF010 | F | Nivel de Acesso | Ao se cadastrar, deverá haver uma opção para submeter o cadastro como Aluno, Professor, Professor Coordenador, Professor Diretor e Empresa parceira. | Baixa |
-| | | | | |
+| RF010 | F | Comentários públicos | Os comentários públicos deverão compor o perfil, como forma de interação entre os perfis. | Média |
+| RF011 | F | Comentários privados | Os comentários privados deverão aparecer somente quem é dono do perfil. | Média |
+| RF012 | F | Nivel de Acesso | Ao se cadastrar, deverá haver uma opção para submeter o cadastro como Aluno, Professor, Professor Coordenador, Professor Diretor e Empresa parceira. | Baixa |
 | | | | | |
 | | | | | |
 | | | | | |
