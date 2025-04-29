@@ -1,0 +1,20 @@
+{
+  "pt": {
+    "title": "Bem-vindo ao Carômetro",
+    "email": "Email",
+    "password": "Senha",
+    "login": "Entrar"
+  },
+  "en": {
+    "title": "Welcome to Carômetro",
+    "email": "Email",
+    "password": "Password",
+    "login": "Login"
+  },
+  "es": {
+    "title": "Bienvenido a Carômetro",
+    "email": "Correo electrónico",
+    "password": "Contraseña",
+    "login": "Iniciar sesión"
+  }
+}
