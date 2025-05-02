@@ -15,32 +15,79 @@
 }
 
 
-
+/* Menu Principal*/
 #menu {
-    margin: 0%;
-    padding: 0%;
-    list-style: none;
     display: flex;
-    gap: 48px;
     justify-content: center;
-    padding: 20px;
+    align-items: center;
+    width: 100%;    
     background-color: var(--cinza);
+    padding: 16px;
+    position: absolute;
+    margin: 0%;
+    list-style: none;
+    padding: 40px;  
 }
 
 #menu li a {
     text-decoration: none;
     color: var(--vermelho);
     padding: 8px 12px;
-    transition: background 0.3s;
     background-color: var(--verde);
 }
 
 
 
+
+
+
+
+
+
+#principal {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 85vh;
+}
+
+#notificacoes{
+    height: 50vh;
+    background-color: var(--azul)
+}
+
+
+#formularioAcesso {
+    height: 50vh;
+    background-color: var(--vermelho);
+}
+
+#formulario{
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 footer {
-    background-color: var(--cinza);
-    padding: 20px;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 2%;
+    background-color: var(--verde);
+    position: absolute;
+    bottom: 0%;
 }
 
 #menuIdioma select {
