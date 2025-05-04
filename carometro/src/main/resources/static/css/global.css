@@ -1,18 +1,31 @@
-/* Variáveis para */
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
-* {
-    font-family: 'Open Sans', 'Roboto', sans-serif ;
-    box-sizing: border-box;
-
+:root {
     --branco: #f1f1f1;
     --cinza: #ABB8C3;
     --cinza--escuro: #666666;
     --preto: #2e2e2e;
     --azul: #243E63;
-    --verde: #004854;
+    --verde: #09694c;
     --vermelho: #CF2E2E;
 }
+
+* {
+    font-family: 'Open Sans', 'Roboto', sans-serif ;
+    box-sizing: border-box;
+}
+
+/* Página*/
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--cinza); /* cor do fundo da página */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
 
 
 /* Menu Principal*/
@@ -20,77 +33,268 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;    
     background-color: var(--cinza);
-    padding: 16px;
-    position: absolute;
-    margin: 0%;
     list-style: none;
+    gap: 48px;
+    
+    /* posição*/
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;    
     padding: 40px;  
+    z-index: 1000;
+    margin: 0%;
 }
 
 #menu li a {
-    text-decoration: none;
     color: var(--vermelho);
+    text-decoration: none;
     padding: 8px 12px;
-    background-color: var(--verde);
+}
+
+#menu li a:hover {
+    font-weight: bold;
 }
 
 
 
-
-
-
-
-
-
+/* Main do site */
 #principal {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center; 
+    height: 100vh; 
+}
+
+
+
+/* Configuração da tela Inicial*/
+#telaInicial {
+    width: 70%; 
+    height: 60%;
+    background-color: var(--branco);    
+    border-radius: 10px;
+    box-shadow: 0 0 16px rgba(20, 20, 20, 0.2);
+    display: flex;
+    padding: 20px;
+    gap: 20px;
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
-    height: 85vh;
-}
-
-#notificacoes{
-    height: 50vh;
-    background-color: var(--azul)
 }
 
 
-#formularioAcesso {
-    height: 50vh;
-    background-color: var(--vermelho);
+
+/* Área das notificações */
+#notificacoes, #formularioAcesso {
+    display: flex;
+    width: 60%;
+    flex-direction: column;
+    justify-content: center;     
+    align-items: center;
+    padding: 8px;
 }
 
-#formulario{
+.titulo, .titulo2, .titulo3 {
+    font-size: 48px;
+}
+
+.titulo, .destaque {
+    color: var(--vermelho);
+}
+
+.titulo2, .destaque2 {
+    color: var(--verde);
+}
+
+.titulo3, .destaque3 {
+    color: var(--azul);
+}
+
+.texto{
+    font-size: 24px;
+    text-align: right;
+}
+
+.texto2, .texto3 {
+    font-size: 24px;
+    text-align: center;
+}
+
+
+
+/* Área do formulário */
+#formularioLogin{
     display: flex;
     flex-direction: column;
+    gap: 16px;
+    align-items: center;
+}
+
+button, input {
+    border: none;
 }
 
 
 
+/* Login */
+#identificacao, #senhaAcesso {
+    width: 480px;
+    height: 60px;
+}
+
+#entrar, #registrar {
+    width: 480px;
+    height: 32px;
+    background-color: var(--vermelho);
+    color: var(--branco);
+}
+
+#entrar:hover, #registrar:hover {
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#recuperarSenha:hover {
+    color: var(--vermelho);
+    cursor: pointer;
+}
 
 
 
+/* Recuperar senha */
+#telaRecuperar {
+    display: flex;
+    flex-direction: column;
+    width: 1080px;
+    height: 60%;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 0px;
+    gap: 8px;
+    align-items: center;
+    background-color: var(--branco);
+}
+
+#notificacoes2, #formularioAcesso2{
+    display: flex;
+    width: 60%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+}
+
+#formularioRecuperar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+}
+
+#identificacao2{
+    width: 680px;
+    height: 60px;
+    color: var(--branco);
+}
+
+#botoes{
+    display: flex;
+    gap: 24px;
+}
+
+#voltar, #recuperar {
+    width: 240px;
+    height: 32px;
+    background-color: var(--verde);
+    color: var(--branco);
+}
 
 
 
+/* Registrar-se */
+#telaRegistro {
+    display: flex;
+    flex-direction: column;
+    width: 1080px;
+    height: 60%;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 0px;
+    gap: 8px;
+    align-items: center;
+    background-color: var(--branco);
+}
+
+#notificacoes3, #formularioAcesso3 {
+    display: flex;
+    width: 60%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+}
+
+#identificacao3 {
+    width: 680px;
+    height: 60px;
+    color: var(--branco);
+}
+
+#formularioRegistro {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    justify-content: center;
+}
+
+#botoes2 {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+}
+
+#nome2, #sobrenome2, #email2, 
+#telefone2, #senha2, #senhaRepetida2 {
+    width: 480px;
+    height: 60px;
+}
+
+#voltar2, #registrar2 {
+    width: 240px;
+    height: 32px;
+    background-color: var(--azul);
+    color: var(--branco);
+}
 
 
 
+/* Animação do botão */
+#entrar:hover, #registrar:hover, #voltar:hover, 
+#recuperar:hover, #voltar2:hover, #registrar2:hover {
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+
+/* Footer do site */
 footer {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
+    height: 8%;
+
     padding: 2%;
-    background-color: var(--verde);
+    background-color: #f1f1f1;
     position: absolute;
     bottom: 0%;
 }
 
 #menuIdioma select {
-    padding: 5px;
+    padding: 0px;
     font-size: 14px;
 }
