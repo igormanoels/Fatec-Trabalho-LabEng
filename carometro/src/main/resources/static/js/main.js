@@ -54,6 +54,47 @@ function registrar() {
         </div>
     `;
 
+    const formularioRegistro = document.getElementById("formularioRegistro");
+
+    formularioRegistro.addEventListener("submit", async (event) => {
+      event.preventDefault();
+
+      const usuario = {
+        nome: document.getElementById("nome2").value,
+        sobrenome: document.getElementById("sobrenome2").value,
+        email: document.getElementById("email2").value,
+        telefone: document.getElementById("telefone2").value,
+        senha: document.getElementById("senha2").value,
+      };
+
+      const senhaRepetida = document.getElementById("senhaRepetida2").value;
+
+      if (usuario.senha !== senhaRepetida) {
+        alert("As senhas não coincidem!");
+        return;
+      }
+
+      try {
+        const resposta = await fetch("http://localhost:8080/api/usuarios", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(usuario),
+        });
+
+        if (resposta.ok) {
+          alert("Usuário registrado com sucesso!");
+          telaInicial();
+        } else {
+          const erro = await resposta.text();
+          alert("Erro ao registrar: " + erro);
+        }
+      } catch (erro) {
+        alert("Erro de conexão com a API.");
+        console.error(erro);
+      }
+    });
+
+
     const btnVoltar = document.getElementById("voltar2");
     btnVoltar.addEventListener("click", telaInicial);
 
@@ -79,6 +120,39 @@ function telaInicial() {
             </div>
         </div>
     `;
+
+    const formularioLogin = document.getElementById("formularioLogin");
+
+    formularioLogin.addEventListener("submit", async (event) => {
+      event.preventDefault();
+
+      const login = {
+        email: document.getElementById("identificacao").value,
+        senha: document.getElementById("senhaAcesso").value,
+      };
+
+      try {
+        const resposta = await fetch(
+          "http://localhost:8080/api/usuarios/login",
+          {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(login),
+          }
+        );
+
+        if (resposta.ok) {
+          const dados = await resposta.json();
+          alert("Bem-vindo, " + dados.nome + "!");
+        } else {
+          alert("Credenciais inválidas.");
+        }
+      } catch (erro) {
+        alert("Erro de conexão com a API.");
+        console.error(erro);
+      }
+    });
+
     const btnRecuperarSenha = document.getElementById("recuperarSenha");
     const btnRegistarUsuario = document.getElementById("registrar");
     
