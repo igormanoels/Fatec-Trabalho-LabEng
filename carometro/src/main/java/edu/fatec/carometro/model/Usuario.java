@@ -21,6 +21,14 @@ public class Usuario {
 
     @OneToMany(mappedBy = "usuario")
     private List<TipoAcessoUsuario> acessos;
+    
+    public Usuario(String em, String sn, String nm, String cat, boolean bl) {
+    	this.email = em;
+    	this.senha = sn;
+    	this.nome = nm;
+    	this.categoria = cat;
+    	this.permissao = bl;
+    }
 
 	public String getEmail() {
 		return email;
