@@ -2,35 +2,52 @@ package edu.fatec.carometro.model;
 
 import jakarta.persistence.*;
 import java.util.List;
+import java.util.Objects;
 
 @Entity
 public class Usuario {
     @Id
+    @Column(nullable = false, unique = true)
     private String email;
 
+    @Column(nullable = false)
     private String senha;
+    
     private String nome;
     private String categoria;
     private boolean permissao;
 
-    @OneToOne(mappedBy = "usuario", cascade = CascadeType.ALL)
+    @OneToOne(mappedBy = "usuario", cascade = CascadeType.ALL, orphanRemoval = true)
     private Endereco endereco;
 
-    @OneToOne(mappedBy = "usuario", cascade = CascadeType.ALL)
+    @OneToOne(mappedBy = "usuario", cascade = CascadeType.ALL, orphanRemoval = true)
     private PerfilUsuario perfil;
 
-    @OneToMany(mappedBy = "usuario")
+    @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<TipoAcessoUsuario> acessos;
     
-    public Usuario(String em, String sn, String nm, String cat, boolean bl) {
-    	this.email = em;
-    	this.senha = sn;
-    	this.nome = nm;
-    	this.categoria = cat;
-    	this.permissao = bl;
+    // Construtores
+    public Usuario() {}
+    
+    public Usuario(String email, String senha, String nome, String categoria, boolean permissao) {
+        this.email = email;
+        this.senha = senha;
+        this.nome = nome;
+        this.categoria = categoria;
+        this.permissao = permissao;
+    }   
+   
+    // Equals e HashCode
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Usuario usuario = (Usuario) o;
+        return email.equals(usuario.email);
     }
 
-	public String getEmail() {
+    // Getters e Setters (mantidos como estão)
+    public String getEmail() {
 		return email;
 	}
 
@@ -78,13 +95,24 @@ public class Usuario {
 		this.endereco = endereco;
 	}
 
-	public PerfilUsuario getPerfilUsuario() {
+	public PerfilUsuario getPerfil() {
 		return perfil;
 	}
 
-	public void setPerfilUsuario(PerfilUsuario perfilUsuario) {
-		this.perfil = perfilUsuario;
+	public void setPerfil(PerfilUsuario perfil) {
+		this.perfil = perfil;
 	}
 
-    
+	public List<TipoAcessoUsuario> getAcessos() {
+		return acessos;
+	}
+
+	public void setAcessos(List<TipoAcessoUsuario> acessos) {
+		this.acessos = acessos;
+	}
+
+	@Override
+    public int hashCode() {
+        return Objects.hash(email);
+    }
 }
