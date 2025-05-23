@@ -46,7 +46,7 @@ public class Usuario {
         return email.equals(usuario.email);
     }
 
-    // Getters e Setters (mantidos como estão)
+    // Getters e Setters
     public String getEmail() {
 		return email;
 	}
