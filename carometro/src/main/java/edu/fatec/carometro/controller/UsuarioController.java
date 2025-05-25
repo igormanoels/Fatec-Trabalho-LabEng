@@ -1,17 +1,12 @@
 package edu.fatec.carometro.controller;
 
 import java.util.List;
+import java.util.Optional;
 
+import edu.fatec.carometro.dto.LoginRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import edu.fatec.carometro.model.Usuario;
 import edu.fatec.carometro.service.UsuarioService;
@@ -27,6 +22,17 @@ public class UsuarioController {
     public ResponseEntity<Usuario> criarUsuario(@RequestBody Usuario usuario) {
         Usuario novoUsuario = usuarioService.salvar(usuario);
         return ResponseEntity.ok(novoUsuario);
+    }
+
+    @PostMapping("/login")
+    public ResponseEntity<?> login(@RequestBody LoginRequest login) {
+        Optional<Usuario> usuario = usuarioService.buscarPorEmail(login.getEmail());
+
+        if (usuario.isPresent() && usuario.get().getSenha().equals(login.getSenha())) {
+            return ResponseEntity.ok(usuario.get());
+        }
+
+        return ResponseEntity.status(401).body("Credenciais inválidas");
     }
 
     @GetMapping
