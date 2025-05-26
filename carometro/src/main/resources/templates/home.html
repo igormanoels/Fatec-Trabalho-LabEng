@@ -23,7 +23,7 @@
             <input type="text" name="pesquisaPerfil" id="pesquisaPerfil" placeholder="@PesquisaPerfil">
         </header>
         
-        
+
         <nav id="navegacao">
             <ul id="menu">
                 <li><a href="">Meu Perfil</a></li>
@@ -37,24 +37,26 @@
         <main id="principal">
 
             <div id="bio">
-                <div id="foto">Foto</div>
-                <div id="infoBio">
-                    <p id="identificadorPerfil">@IdentificadorUsuario</p>
-                    <p id="nomePerfil">Nome Usuário, idade</p>
-                    <p id="descricaoPerfil">Descrição Bio</p>
+                <div id="bio_superior">
+                    <div id="foto">Foto</div>
+                    <div id="infoBio">
+                        <p id="identificadorPerfil">@IdentificadorUsuario</p>
+                        <p id="nomePerfil">Nome Usuário, idade</p>
+                        <p id="descricaoPerfil">Descrição Bio</p>
+                    </div>
+                </div>
+                <div id="bio_inferior">
+                    <a href="#">Instagram</a>
+                    <a href="#">LinkedIn</a>
+                    <a href="#">GitHub</a>
                 </div>
             </div>
 
-            <div id="redesSociais">
-                <a href="#">Instagram</a>
-                <a href="#">LinkedIn</a>
-                <a href="#">GitHub</a>
-              </div>
 
             <div id="numerosPerfil">
                 <div id="visualizacoes">
                     <p id="qtdVisualizacoes">0</p>
-                    <p>visualizações do Perfil</p>
+                    <p>Visualizações do Perfil</p>
                 </div>
                 <div id="seguidores">
                     <p id="qtdSeguidores">0</p>
@@ -66,6 +68,17 @@
                 </div>
             </div>
 
+            <div id="apresentacaoEcomentarios">
+                <div id="apresentacao">
+                    <h3>Apresentação</h3>
+                    <p>Ainda não há dados no perfil.</p>
+                </div>
+                <div id="comentarios">
+                    <h3>Seção de Comentários</h3>
+                    <p id="comentario">Ainda não há comentário no perfil.</p>
+                </div>
+            </div>
+
 
         </main>
         
@@ -73,6 +86,7 @@
         <footer>
              
         </footer>
+
 
         <script src="/carometro/src/main/resources/static/js/home.js"></script>
         <!-- 

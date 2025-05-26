@@ -1,3 +1,7 @@
+const nome_usuario = '';
+const senha_usuario = '';
+
+
 document.addEventListener("DOMContentLoaded", function () {
     const inputPesquisa = document.getElementById("pesquisaPerfil");
 
