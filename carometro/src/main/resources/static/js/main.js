@@ -137,6 +137,9 @@ function telaInicial() {
 
       if (resposta.ok) {
         const dados = await resposta.json();
+
+        localStorage.setItem("dados", JSON.stringify(dados));
+
         alert("Bem-vindo, " + dados.nome + "!");
         window.location.href = "home.html";
       } else {
